@@ -1,7 +1,7 @@
 {
   "rewrites": [
     {
-      "source": "/api/(.*)",
+      "source": "/api/setoran-dev/v1/(.*)",
       "destination": "https://api.tif.uin-suska.ac.id/setoran-dev/v1/$1"
     },
     {
