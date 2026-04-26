@@ -7,7 +7,6 @@ const API = axios.create({
 
 const KC_URL =
   process.env.REACT_APP_KC_URL ||
-  process.env.KC_URL ||
   "https://id.tif.uin-suska.ac.id";
 
 const KC_USERINFO_URL = `${KC_URL}/realms/dev/protocol/openid-connect/userinfo`;
