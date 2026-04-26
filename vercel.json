@@ -1,0 +1,16 @@
+{
+  "rewrites": [
+    { 
+      "source": "/api/(.*)", 
+      "destination": "https://api.tif.uin-suska.ac.id/setoran-dev/v1/$1" 
+    },
+    { 
+      "source": "/realms/(.*)", 
+      "destination": "https://id.tif.uin-suska.ac.id/realms/$1" 
+    },
+    { 
+      "source": "/(.*)", 
+      "destination": "/index.html" 
+    }
+  ]
+}
