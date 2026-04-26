@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { getDetailMahasiswa, batalSetoran } from "../services/api";
 import Navbar from "../components/Navbar";
@@ -10,7 +10,7 @@ function SetoranDetail() {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(false);
 
-  const loadData = async () => {
+  const loadData = useCallback(async () => {
     setLoading(true);
     try {
       const res = await getDetailMahasiswa(nim);
@@ -21,11 +21,11 @@ function SetoranDetail() {
     } finally {
       setLoading(false);
     }
-  };
+  }, [nim]);
 
   useEffect(() => {
     loadData();
-  }, [nim]);
+  }, [loadData]);
 
   const handleBatalSetoran = async (item) => {
     if (!item.info_setoran) return;
