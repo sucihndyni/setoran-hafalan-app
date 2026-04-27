@@ -56,10 +56,10 @@ function SetoranDetail() {
   return (
     <>
       <Navbar />
-      
+
       <div className="min-vh-100 fade-in-up page-setoran-detail">
         <div className="container pt-4">
-          
+
           <div className="d-flex justify-content-between align-items-center mb-5">
             <div>
               <h2 className="fw-bold mb-1 setoran-title">Detail Setoran</h2>
@@ -80,7 +80,7 @@ function SetoranDetail() {
             <h4 className="section-title mb-0 fw-bold setoran-history-title">Riwayat Daftar Setoran</h4>
             <div className="flex-grow-1 ms-3 border-bottom opacity-25"></div>
           </div>
-          
+
           {detail.length === 0 ? (
             <div className="alert alert-light text-center py-5 border-dashed shadow-sm">
               <p className="text-muted mb-0">Belum ada riwayat setoran yang tercatat.</p>
@@ -90,14 +90,13 @@ function SetoranDetail() {
               {detail.map((item) => (
                 <div key={item.id} className="col-xl-4 col-md-6 col-12">
                   <div className="p-4 h-100 rounded border-0 bg-white shadow-sm hover-lift d-flex flex-column setoran-card-item">
-                    
+
                     <div className="d-flex justify-content-between align-items-start mb-2">
                       <h5 className="fw-bold text-dark mb-0 text-truncate maxw-70">
                         {item.nama}
                       </h5>
-                      <small className="text-muted fw-bold text-uppercase setoran-label-small">
-                        {info.nama}
-                      </small>
+                      <p className="mb-0 fw-semibold text-muted fs-5">
+                        {info.nama}</p>
                       <span className={`badge px-3 py-2 ${item.sudah_setor ? "bg-success" : "bg-danger"} setoran-badge-small`}>
                         {item.sudah_setor ? "Sudah Setor" : "Belum Setor"}
                       </span>
@@ -120,9 +119,9 @@ function SetoranDetail() {
                             <small className="text-muted fw-semibold">Validasi:</small>
                             <small className="fw-bold text-gold">{item.info_setoran.tgl_validasi || "-"}</small>
                           </div>
-                          
-                          <button 
-                            className="btn btn-link btn-sm text-danger text-decoration-none p-0 mt-2 text-start fw-bold" 
+
+                          <button
+                            className="btn btn-link btn-sm text-danger text-decoration-none p-0 mt-2 text-start fw-bold"
                             onClick={() => handleBatalSetoran(item)}
                           >
                             <small>✕ Batalkan Setoran</small>
