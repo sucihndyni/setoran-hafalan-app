@@ -95,6 +95,9 @@ function SetoranDetail() {
                       <h5 className="fw-bold text-dark mb-0 text-truncate maxw-70">
                         {item.nama}
                       </h5>
+                      <small className="text-muted fw-bold text-uppercase setoran-label-small">
+                        {info.nama}
+                      </small>
                       <span className={`badge px-3 py-2 ${item.sudah_setor ? "bg-success" : "bg-danger"} setoran-badge-small`}>
                         {item.sudah_setor ? "Sudah Setor" : "Belum Setor"}
                       </span>
